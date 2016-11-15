@@ -4,6 +4,13 @@
              xmlns:local="clr-namespace:WPF_Training"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+         <ResourceDictionary>
+             <ResourceDictionary.MergedDictionaries>
+                 <ResourceDictionary Source="Resouces/TextBoxStyle.xaml"></ResourceDictionary>
+                 <ResourceDictionary>
+                     <local:Person x:Key="Person"></local:Person>
+                 </ResourceDictionary>
+             </ResourceDictionary.MergedDictionaries>
+         </ResourceDictionary>
     </Application.Resources>
 </Application>

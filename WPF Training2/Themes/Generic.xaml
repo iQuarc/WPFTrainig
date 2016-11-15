@@ -1,0 +1,38 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WPF_Training2">
+
+
+    <Style TargetType="{x:Type local:StarRating}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:StarRating}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <TextBox x:Name="One"
+                                     Visibility="Hidden">*</TextBox>
+                            <TextBox x:Name="Two"
+                                     Visibility="Hidden">**</TextBox>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Rating"
+                                 Value="1">
+                            <Setter TargetName="One"
+                                    Property="Visibility"
+                                    Value="Visible"></Setter>
+                        </Trigger>
+                        <Trigger Property="Rating"
+                                 Value="2">
+                            <Setter TargetName="Two"
+                                    Property="Visibility"
+                                    Value="Visible"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
